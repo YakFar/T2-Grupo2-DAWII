@@ -1,28 +1,24 @@
 package com.cibertec.reclamos_service;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import lombok.*;
 
 @Getter
 @Setter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "reclamo", schema = "atencion")
-public class Reclamo implements Serializable {
-  private static final long serialVersionUID = 1L;
-
+public class Reclamo {
   @Id
-  private Long id;
-  private String descripcion;
-  private String fecha;
-  private String estado;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long numreclamo;
+  private LocalDate fechareclamo;
+  private String nomcliente;
+  private String ultimos4tarjeta;
+  private String motivo;
+  private String analista = "No asignado";
+  private Integer estado = 1;
+  private String observacion = "por evaluar";
 }
