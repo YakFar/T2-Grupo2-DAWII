@@ -76,3 +76,9 @@ Use estado `2` para procedente o `3` para improcedente. La observación es opcio
 ## Alcance de almacenamiento
 
 Los reclamos se guardan en memoria para mantener el ejercicio autocontenido: al reiniciar `servicio-reclamos`, los registros se reinician. Para producción se conectaría una base de datos.
+
+# Evidencias
+
+## Eureka Server
+
+![img.png](img.png)
